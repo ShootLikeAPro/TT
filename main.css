@@ -15,15 +15,16 @@ body {
   background-size: 100%;
   background: radial-gradient(50% 50% at 50% 50%, #463734 0%, #1e2034 100%)
     no-repeat;
+  background-size: cover;
+  /* background: url(/img/background_purple.svg) no-repeat; */
   background-attachment: fixed;
-  position: relative;
   margin: 0;
 }
 
 .wrapper {
   max-width: 1446px;
   margin: 0 auto;
-  padding-bottom: 1000px;
+  position: relative;
 }
 
 /*-------------------------------------------------- Header-------------------------------------------- */
@@ -31,10 +32,9 @@ body {
   display: flex;
   align-items: center;
   margin-bottom: 159px;
-  top: 0;
-  left: 0;
   position: sticky;
   z-index: 3;
+  height: 100px;
 }
 
 .header-nav {
@@ -54,12 +54,17 @@ body {
   font-size: 13px;
   line-height: 19px;
   font-weight: 600;
-  opacity: 0.6;
   letter-spacing: 1.85px;
 }
 
 .header-nav__list a {
   color: #ffffff;
+  opacity: 0.6;
+}
+
+.header-nav__list a:hover {
+  opacity: 1;
+  transition: 0.5s;
 }
 
 .header-nav__social {
@@ -73,10 +78,9 @@ body {
 
 .promo {
   min-width: 34%;
-  /* margin-left: 12.5%; */
   display: flex;
-  z-index: 2;
   flex-direction: column;
+  margin-bottom: 120px;
 }
 
 .job_description {
@@ -101,8 +105,19 @@ h1 span {
 }
 .couple {
   z-index: -1;
-  /* position: absolute; */
+  position: absolute;
   right: 0;
+  top: 10%;
+}
+
+.heading h1 {
+  margin-bottom: 75px;
+}
+
+/*------------------------------------ Блок с кнопкой "Начать зарабатывать" ----------------------------------------*/
+
+.earning {
+  display: flex;
 }
 
 .job_btn {
@@ -119,13 +134,44 @@ h1 span {
   position: relative;
   margin-right: 2%;
   cursor: pointer;
+  outline: rgb(30, 32, 52);
 }
 
 .job_btn::before {
-  background: url(./img/phone_button.svg) no-repeat;
+  background: url(./img/header/phone_button.svg) no-repeat;
   position: absolute;
+  content: "";
+  width: 23px;
+  height: 25px;
+  left: 35px;
 }
 
-.earning {
+/*---------------------------------------------------- Блок с кнопкой чата и обратным звонком ---------------------------------------*/
+.help {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1920px;
+  margin: 0 auto; 
+}
+
+.help .btn_chat {
+  border-radius: 10px;
+  background-image: url(./img/header/chat_btn.png);
+  width: 380px;
+  height: 69px;
+  border: none;
+  border-radius: 10px;
+  margin-left: 90px;
+  cursor: pointer;
+}
+
+.help .btn_callback {
+  width: 94px;
+  height: 94px;
+  background-image: url(./img/header/btn_callback.svg);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-right: 90px;
 }
